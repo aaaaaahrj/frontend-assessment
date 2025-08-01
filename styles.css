@@ -1,0 +1,328 @@
+@font-face {
+  font-family: "SFPro";
+  src: url("assets/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("assets/fonts/SF-Pro-Text-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("assets/fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("assets/fonts/SF-Pro-Text-Thin.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  font-family: "SFPro", Arial, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 24px;
+  background: #fff;
+
+  width: 100%;
+}
+
+/* Styling for card and grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1.2fr 1fr;
+  gap: 24px;
+  width: min-content;
+  margin: 0 auto;
+}
+
+/* Top row: first two cards, each spanning 1.5 columns */
+.grid-container .card:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+.grid-container .card:nth-child(2) {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+}
+
+/* Bottom row: next three cards, each in their own column */
+.grid-container .card:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+.grid-container .card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+.grid-container .card:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.card {
+  background: #f5f5f7;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 32px 16px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex; /* Add this */
+  align-items: stretch; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  min-height: 420px;
+  max-height: 600px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* vertical: image top, price bottom */
+  align-items: center; /* horizontal: center children */
+  height: 100%;
+}
+
+.card:nth-child(2) img {
+  width: 400px;
+  height: auto;
+  display: block;
+}
+.card:nth-child(1) img,
+.card:nth-child(3) img,
+.card:nth-child(4) img,
+.card:nth-child(5) img,
+.card:nth-child(6) img {
+  margin-top: 10%;
+  width: 240px; /* or any size you prefer */
+  height: auto; /* keeps aspect ratio */
+  display: block;
+}
+
+.card-content .product-price {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.card-content .product-price .product {
+  font-weight: 400;
+  font-size: medium;
+}
+
+.card-content .product-price .product:hover {
+  text-decoration: underline;
+  color: #006ad3;
+  cursor: pointer;
+}
+
+.card-content .product-price .price {
+  font-weight: 200;
+  font-size: small;
+}
+
+/* Colored Dots */
+.color-dots-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+  margin-bottom: 48px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #dcdcdc;
+}
+
+.plus {
+  font-size: 0.8rem;
+  color: #222;
+}
+
+/* Styling for text */
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.shop-link {
+  color: #0071e3;
+  text-decoration: none;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.shop-link:hover {
+  text-decoration: underline;
+}
+
+.light-text {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.semibold-text {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Product Page Stylings */
+.product-page-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #fff;
+  min-height: 100vh;
+}
+
+.product-page-container .product-info {
+  width: 18%;
+}
+
+.product-image img {
+  width: 600px; /* Set your desired width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+.product-name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.product-price {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+/* Colored Dots */
+.product-page-colors .color-dots-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to next line */
+  gap: 16px; /* Space between dots */
+  margin: 24px 0 48px 0;
+  justify-content: flex-start; /* Or center, as you prefer */
+  align-items: center;
+  max-width: 100%;
+}
+
+.product-page-colors .dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #dcdcdc;
+}
+
+/* Select Styling */
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 2px solid #bcbcbc;
+  border-radius: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.dropdown label {
+  display: block;
+  padding-left: 4px;
+  color: #888;
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+.dropdown select {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 200;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.separator {
+  height: 1px;
+  background: #e0e0e0;
+  border: none;
+  margin: 16px 0;
+  width: 100%;
+}
+
+/* Delivery */
+.delivery-text {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.delivery-text .delivery-text-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+  gap: 2px;
+}
+
+.delivery-text .delivery-text-content .shop-link {
+  color: #0071e3;
+  text-decoration: none;
+}
+.delivery-text .delivery-text-content .shop-link:hover {
+  text-decoration: underline;
+}
+
+.add-button {
+  font-weight: 200;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background-color: #0271e3;
+}
