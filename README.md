@@ -1,5 +1,5 @@
 # SysDev Frontend Developer Assessment
-of John Robert Anthony P. Tabudlong, BSCS-4A
+by *John Robert Anthony P. Tabudlong*, BSCS-4A
 
 **Stages Completed:**
 1 ✅
